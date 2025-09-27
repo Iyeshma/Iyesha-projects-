@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Create a game that generates a random number (Btw 1 and 100)
+Simulate a player that guesses number randomly.
+Provide hints after each guess("Too high" or"Too low)
+Track previous guesses to avoid repeat
+End the game when the player guesses the correct number.
+*/
+
+function playGuessingGame() {
+  const hiddenNumber = Math.floor(Math.random() * 50) + 1;
+
+  let guess;
+  let tries = 0;
+  
+
+  while (true) {
+    guess = Math.floor(Math.random() * 50) + 1;
+    tries++;
+    console.log(`Guess Number ${tries}:${guess}`);
+
+    if (guess === hiddenNumber) {
+      console.log("Correct!The hdden number was",hiddenNumber);
+      console.log(`Gussed in ${tries} attempt.`)
+      return;
+    }else if(guess > hiddenNumber){
+        console.log("Too high.");
+    }else{
+        console.log("Too Low.")
+    }
+  }
+    
+}
+
+playGuessingGame();
+
+
+
+    </script>
+</body>
+</html>
